@@ -1,0 +1,39 @@
+/* .ss {
+  color: rgb(233, 161, 72);
+  font-weight: 700;
+}
+
+.navbar {
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+  padding: 0 15px;
+}
+
+.navbar-logo {
+  font-size: medium;
+  font-weight: 700;
+  font-size: 26px;
+}
+
+.navbar-list {
+  display: flex;
+  list-style: none;
+  justify-content: space-around;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+a {
+  list-style: none;
+  text-decoration: none;
+  color: black;
+  font-weight: 700;
+
+}
+
+li {
+  margin: 10px 9px;
+} */

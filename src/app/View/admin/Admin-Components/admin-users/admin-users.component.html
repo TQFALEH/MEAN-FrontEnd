@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="my-5">
+    <h1 class="display-5 ">User <span class="text-warning fw-bold">List</span> </h1>
+  </div>
+  <hr>
+  <div class="row p-4">
+    <div class="col-12 my-2" *ngFor="let user of users let i = index">
+      <div class="userbox bg-warning shadow-sm ">
+        <div class="d-flex   align-items-center p-2">
+          <div>
+            <span class="fw-bolder mx-3">#{{i+1}}</span>
+          </div>
+          <div class="avatar">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+              class="bi bi-person-circle" viewBox="0 0 16 16">
+              <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+              <path fill-rule="evenodd"
+                d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+            </svg>
+          </div>
+          <div class="details ms-4 mt-2">
+            <h1 class="lead "> <span>{{user.name}}</span> | </h1>
+          </div>
+        </div>
+        <div class="role shadow-lg ">
+          <div class="badge  shadow-lg  border-warning border ">{{user.role?
+            "Admin":"User"}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

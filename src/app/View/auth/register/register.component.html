@@ -1,0 +1,26 @@
+<div class="main">
+  <form [formGroup]="registerForm" (ngSubmit)="onRegister()" class="form">
+    <h1>Register</h1>
+    <div *ngIf="message" class="alert-box" role="alert">
+      {{message}}
+    </div>
+
+    <label for="name">Name</label><br>
+    <input formControlName="name" required id="name" type="name">
+    <br>
+
+    <label for="email">Email</label><br>
+    <input formControlName="email" required id="email" type="email">
+    <br>
+    <label for="Password">Password</label><br>
+    <input formControlName="password" required id="Password" type="Password">
+    <br>
+    <button [disabled]="!registerForm.valid" type="submit">
+      <div class="d-flex justify-content-center align-items-center">
+        <span *ngIf="!isLoading">Register</span>
+        <div *ngIf="isLoading" class="spinner-border" role="status">
+        </div>
+      </div>
+    </button>
+  </form>
+</div>

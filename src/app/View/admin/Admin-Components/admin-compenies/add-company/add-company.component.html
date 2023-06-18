@@ -1,0 +1,29 @@
+<div class="main">
+  <form [formGroup]="companyForm" (ngSubmit)="onadd()" class="form">
+    <h1>Add <span class="text-warning">Company</span> </h1>
+    <div *ngIf="" class="alert-box" role="alert">
+      <!-- {{message}} -->
+    </div>
+
+    <label for="arabicName">Arabic name</label><br>
+    <input formControlName="arabicName" required id="arabicName" type="text">
+    <br>
+
+    <label for="englishName">English name</label><br>
+    <input formControlName="englishName" required id="englishName" type="text">
+    <br>
+    <label for="image">Image Link</label><br>
+    <input formControlName="image" required id="image" type="url">
+    <br>
+    <label for="budget">Budget</label><br>
+    <input formControlName="budget" required id="budget" type="number">
+    <br>
+    <button [disabled]="!companyForm.valid" type="submit">
+      <div class="d-flex justify-content-center align-items-center">
+        <span *ngIf="!isLoading"></span>Add Company
+        <div *ngIf="isLoading" class="spinner-border" role="status">
+        </div>
+      </div>
+    </button>
+  </form>
+</div>

@@ -1,0 +1,74 @@
+<div class="container">
+  <div class="my-5">
+    <h1 class="display-5 ">User <span class="text-warning fw-bold">List</span> </h1>
+  </div>
+  <hr>
+  <div class="row p-4">
+    <div class="col-lg-6 col-sm-12 my-2" *ngFor="let company of companies let i = index">
+      <div class="userbox bg-warning shadow-sm ">
+        <div class="d-flex  justify-content-between  align-items-center p-2">
+          <div class="d-flex align-items-center">
+            <div>
+              <h6 class="fw-bolder mx-3">#{{i+1}}</h6>
+            </div>
+            <div class="avatar">
+              <img class="" src="{{company.image}}" alt="">
+            </div>
+            <div class="details ms-4  text-center">
+              <div class="fs-3 my-0 lead ">{{company.englishName}}</div>
+              <hr>
+              <div class="lead ">{{company.budget}}$<span>
+                </span></div>
+            </div>
+          </div>
+          <div class="d-flex mx-2 justify-content-between flex-row-reverse ">
+            <div> <button type="button" (click)="onDelete(company._id)" class="border-0 bg-transparent">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="red" class="bi bi-trash"
+                  viewBox="0 0 16 16">
+                  <path
+                    d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6Z" />
+                  <path
+                    d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1ZM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118ZM2.5 3h11V2h-11v1Z" />
+                </svg>
+              </button></div>
+            <div>
+              <button  (click)="onEdit(company)" routerLink="/users" class="border-0 bg-transparent mx-3">
+                <span class="lead ">Edit</span>
+              </button>
+            </div>
+
+          </div>
+        </div>
+        <div>
+          <router-outlet></router-outlet>
+        </div>
+      </div>
+
+      <!--Delete Modal -->
+
+
+
+    </div>
+  </div>
+</div>
+<style>
+  .avatar {
+
+    max-width: 100px;
+    ;
+    padding: 5px;
+  }
+
+  img {
+    width: 100%;
+    height: 90px;
+    background-color: rgba(255, 255, 255, 0.285);
+    padding: 10px;
+    border-radius: 22px;
+    border: 2px solid black;
+
+
+
+
+  }
+</style>

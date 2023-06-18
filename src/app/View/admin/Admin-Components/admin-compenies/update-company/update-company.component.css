@@ -1,0 +1,12 @@
+.userbox {
+  border-bottom: 4px solid black;
+  border-left: 6px solid black;
+}
+
+.role div {
+  background-color: firebrick;
+  color: rgb(4, 4, 4);
+  letter-spacing: 0.4px;
+  font-weight: 800;
+  width: 70px;
+}
