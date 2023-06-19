@@ -9,10 +9,8 @@ import { RegisterComponent } from './View/auth/register/register.component';
 import { DashboardComponent } from './View/dashboard/dashboard.component';
 import { NavbarComponent } from './View/navbar/navbar.component';
 import { AdminComponent } from './View/admin/admin.component';
-
 import { AdminUsersComponent } from './View/admin/Admin-Components/admin-users/admin-users.component';
 import { AdminCompeniesComponent } from './View/admin/Admin-Components/admin-compenies/admin-compenies.component';
-
 import { AddCompanyComponent } from './View/admin/Admin-Components/admin-compenies/add-company/add-company.component';
 import { UpdateCompanyComponent } from './View/admin/Admin-Components/admin-compenies/update-company/update-company.component';
 import { UpdateFormComponent } from './View/admin/Admin-Components/admin-compenies/update-company/update-form/update-form.component';

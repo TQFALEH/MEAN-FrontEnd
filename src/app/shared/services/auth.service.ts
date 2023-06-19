@@ -30,15 +30,16 @@ export class AuthService {
 
     return this.http.get('http://localhost:8000/auth/user', {
       withCredentials: true
-    })
+    });
+
+
   }
 
-
-
-
+ 
   logout() {
     return this.http.post('http://localhost:8000/auth/logout', '', { withCredentials: true }).subscribe(res => {
       console.log(res);
+      this.route.navigate(['/login'])
     }, (e) => {
       console.log(e);
     })

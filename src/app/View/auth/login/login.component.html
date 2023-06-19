@@ -1,15 +1,17 @@
 <div class="main container">
   <form [formGroup]="loginForm" [formGroup]="loginForm" (ngSubmit)="onLogin()" class="form">
     <h1>Login</h1>
-    <div *ngIf="message" class="alert-box" role="alert">
+    <div class="alert-box" role="alert">
       {{message}}
     </div>
     <label for="email">Email</label><br>
     <input formControlName="email" required id="email" type="email">
     <br>
     <label for="Password">Password</label><br>
-    <input  min=6 formControlName="password" required id="Password" type="Password">
+    <input min=6 formControlName="password" required id="Password" type="Password">
     <br>
+    <p class="lead fw-bold fs-6 mt-2">Are you new user ? <span><a class="text-decoration-none" routerLink="/register">Sign up</a></span>
+    </p>
     <button [disabled]="!loginForm.valid" type="submit">
       <div class="d-flex justify-content-center align-items-center">
         <span *ngIf="!isLoading">Login</span>

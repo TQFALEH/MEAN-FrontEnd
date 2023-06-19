@@ -6,9 +6,7 @@ import {
   UrlTree,
 } from '@angular/router';
 import { Observable } from 'rxjs';
-import { authEmitters } from '../authEmmiter';
 import { AuthService } from '../services/auth.service';
-import { AuthGuardTsService } from './auth-guard.ts.service';
 
 @Injectable({
   providedIn: 'root'
@@ -25,8 +23,13 @@ export class NormalGuardTsService {
     | Observable<boolean | UrlTree>
     | Promise<boolean | UrlTree> {
     return new Promise((resolve) => {
-
-
+      this.auth.checkUser().subscribe(res => {
+        console.log(res);
+        if (!res) {
+          console.log("'there's not user logged in");
+          return resolve(true);
+        }
+      })
     });
   }
 }

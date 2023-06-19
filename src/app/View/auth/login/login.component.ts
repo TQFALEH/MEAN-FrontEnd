@@ -33,8 +33,8 @@ export class LoginComponent {
       setTimeout(() => {
         this.isLoading = false;
         this.message = "Welcome Back"
-        this.route.navigate(['/'])
-      }, 1500);
+        this.route.navigate(['/home'])
+      }, 500);
     }, err => {
       this.isLoading = false;
       console.log(err.error.messege);

@@ -1,7 +1,6 @@
 import { Component, SimpleChanges } from '@angular/core';
 import { AuthService } from './shared/services/auth.service';
 import { HttpClient } from '@angular/common/http';
-import { adminEmitters, authEmitters } from './shared/authEmmiter';
 
 @Component({
   selector: 'app-root',
@@ -10,15 +9,21 @@ import { adminEmitters, authEmitters } from './shared/authEmmiter';
 })
 export class AppComponent {
   title = 'curd';
+  isAuth : boolean ;
+  isAdmin : boolean ;
 
 
-
-  constructor(private auth: AuthService, private http: HttpClient, ) { }
+  constructor(private auth: AuthService, private http: HttpClient,) { }
 
 
   ngOnInit(): void {
-  
-
+    // this.auth.checkUser().subscribe((isUser: any) => {
+    //   console.log(isUser.status);
+    //   if (isUser.status) {
+    //     this.isAuth = isUser.status;
+    //     this.isAdmin = isUser.userData.role;
+    //   }
+    // })
   }
 
 

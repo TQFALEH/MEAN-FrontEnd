@@ -23,15 +23,14 @@ export class RegisterComponent implements OnInit {
 
   onRegister() {
     this.isLoading = true;
-    this.auth.register(this.registerForm.value.name,this.registerForm.value.email, this.registerForm.value.password).subscribe((res) => {
+    this.auth.register(this.registerForm.value.name, this.registerForm.value.email, this.registerForm.value.password).subscribe((res) => {
       this.isLoading = false;
-      console.log(res);
       this.message = "Welcome"
       setTimeout(() => {
         this.isLoading = false;
         this.message = ""
-        this.route.navigate(['/'])
-      }, 1500);
+        this.route.navigate(['/home'])
+      }, 500);
     }, err => {
       this.isLoading = false;
       console.log(err.error.messege);

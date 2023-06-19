@@ -14,18 +14,19 @@ import { NormalGuardTsService } from './shared/guard/normal-user.service';
 import { UpdateCompanyComponent } from './View/admin/Admin-Components/admin-compenies/update-company/update-company.component';
 import { UpdateFormComponent } from './View/admin/Admin-Components/admin-compenies/update-company/update-form/update-form.component';
 const routes: Routes = [
-  { path: '', component: DashboardComponent, canActivate: [AuthGuardTsService] },
+  { path: '', component: LoginComponent },
   { path: '', redirectTo: 'overview', pathMatch: 'full' },
-  { path: 'login', component: LoginComponent, },
+  { path: 'home', component: DashboardComponent, canActivate: [AuthGuardTsService] },
+  { path: 'login', component: LoginComponent, canActivate: [NormalGuardTsService] },
   {
-    path: 'register', component: RegisterComponent,
+    path: 'register', component: RegisterComponent, canActivate: [NormalGuardTsService]
   }
   , { path: 'admin', component: AdminComponent, canActivate: [AdminGuardTsService] },
   { path: 'users', component: AdminUsersComponent, canActivate: [AdminGuardTsService] },
   { path: 'companies', component: AdminCompeniesComponent, canActivate: [AdminGuardTsService] },
   { path: 'add-company', component: AddCompanyComponent, canActivate: [AdminGuardTsService] },
   { path: 'update-company', component: UpdateCompanyComponent, canActivate: [AdminGuardTsService] },
-   { path: 'update-company/:id', component: UpdateFormComponent }
+  { path: 'update-company/:id', component: UpdateFormComponent }
 
 ];
 

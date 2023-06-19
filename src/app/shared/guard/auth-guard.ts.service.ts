@@ -6,7 +6,6 @@ import {
   UrlTree,
 } from '@angular/router';
 import { Observable } from 'rxjs';
-import { authEmitters } from '../authEmmiter';
 import { AuthService } from '../services/auth.service';
 
 @Injectable({
