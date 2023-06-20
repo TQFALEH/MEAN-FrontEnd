@@ -18,7 +18,7 @@ export class AdminService {
     const company: Company = { arabicName: e.arabicName, englishName: e.englishName, image: e.image, budget: e.budget }
     return this.http.post('http://localhost:8000/admin/addCompany', company).subscribe(res => {
       console.log(res);
-      this.route.navigate(['']);
+      this.route.navigate(['/home']);
     }, (err) => {
       console.log(err);
     })
