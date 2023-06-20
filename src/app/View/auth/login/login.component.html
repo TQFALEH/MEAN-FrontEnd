@@ -10,7 +10,7 @@
     <label for="Password">Password</label><br>
     <input min=6 formControlName="password" required id="Password" type="Password">
     <br>
-    <p class="lead fw-bold fs-6 mt-2">Are you new user ? <span><a class="text-decoration-none" routerLink="/register">Sign up</a></span>
+    <p class="lead fw-bold fs-6 mt-2">Are you new user ? <span><a class="text-decoration-none text-warning" routerLink="/register">Sign up</a></span>
     </p>
     <button [disabled]="!loginForm.valid" type="submit">
       <div class="d-flex justify-content-center align-items-center">
